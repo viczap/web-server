@@ -9,7 +9,7 @@ locationForm.addEventListener('submit', e => {
     errorMessageParagraph.textContent = '';
     successMessageParagraph.textContent = '';
 
-    fetch(`http://localhost:3000/weather?address=${locationInput.value}`).then(response => {
+    fetch(`/weather?address=${locationInput.value}`).then(response => {
         response.json().then(data => {
             if(data.errorMessage) {
                 errorMessageParagraph.textContent = data.errorMessage;
